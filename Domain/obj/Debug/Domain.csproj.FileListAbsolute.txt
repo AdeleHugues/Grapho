@@ -1,0 +1,6 @@
+C:\Users\adele\source\repos\Grapho2020\Domain\bin\Debug\Domain.dll
+C:\Users\adele\source\repos\Grapho2020\Domain\bin\Debug\Domain.pdb
+C:\Users\adele\source\repos\Grapho2020\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\adele\source\repos\Grapho2020\Domain\obj\Debug\Domain.dll
+C:\Users\adele\source\repos\Grapho2020\Domain\obj\Debug\Domain.pdb
+C:\Users\adele\source\repos\Grapho2020\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
