@@ -38,3 +38,43 @@ C:\Users\adele\source\repos\Grapho2020\App\bin\Debug\DAL.dll
 C:\Users\adele\source\repos\Grapho2020\App\bin\Debug\Dapper.dll
 C:\Users\adele\source\repos\Grapho2020\App\bin\Debug\DAL.pdb
 C:\Users\adele\source\repos\Grapho2020\App\bin\Debug\Dapper.xml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\Grapho2020DB.db
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\TestApp.exe.config
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\TestApp.exe
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\TestApp.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\DAL.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\Domain.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\LaTeXExporter.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\System.Data.SQLite.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\Dapper.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\DAL.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\Domain.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\LaTeXExporter.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\System.Data.SQLite.xml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\bin\Debug\Dapper.xml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\App.csprojAssemblyReference.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\MainWindow.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PageAnamnese.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PagePatient.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PagePositionGrapho.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\UI Elements\Circle.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\UI Elements\PopUp.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\App.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp_Content.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp_MarkupCompile.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp_MarkupCompile.lref
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\MainWindow.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PageAnamnese.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PagePatient.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\Pages\PagePositionGrapho.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\UI Elements\Circle.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\UI Elements\PopUp.baml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp.g.resources
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp.Properties.Resources.resources
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\App.csproj.GenerateResource.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\App.csproj.CoreCompileInputs.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\App.csproj.CopyComplete
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp.exe
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\TestApp.pdb

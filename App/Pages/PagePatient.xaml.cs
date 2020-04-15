@@ -25,10 +25,17 @@ namespace TestApp.Pages
     {
         protected Patient patient;
         protected bool modification;
-        public string[] placeholders = new string[] { "Nom", "Prénom" };
+        public string[] placeholders = new string[] { "Nom", "Prénom", "Nom de l'établissement", "Nom de l'enseignant", "Téléphone", "Rue", "Code Postal", "Ville" };
         public PagePatient(Patient _patient)
         {
             InitializeComponent();
+
+            Patient.Measure(new System.Windows.Size(double.PositiveInfinity, double.PositiveInfinity));
+            Patient.Arrange(new Rect(0, 0, Patient.DesiredSize.Width, Patient.DesiredSize.Height));
+            Fraterie.Width = GridTabControl.ColumnDefinitions[0].ActualWidth;
+            Parents.Width = Arbre.ActualWidth;
+            GrandsParents.Width = Arbre.ActualWidth;
+
             if (_patient != null)
             {
                 patient = _patient;
@@ -98,15 +105,30 @@ namespace TestApp.Pages
         }
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = sender as TextBox;
+            /*TextBox textBox = sender as TextBox;
             int index = int.Parse(textBox.Name.Substring(7, 1));
             if (textBox.Text != placeholders[index - 1])
             {
-                if (index == 1)
-                    PatientRepository.updateNomPatient(patient.PatientId, textBox.Text);
-                else
-                    PatientRepository.updatePrenomPatient(patient.PatientId, textBox.Text);
-            }
+                switch(index)
+                {
+                    case 1:
+                        PatientRepository.updateNomPatient(patient.PatientId, textBox.Text);
+                        break;
+
+                    case 2:
+                        PatientRepository.updatePrenomPatient(patient.PatientId, textBox.Text);
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+                }
+            }*/
         }
         private void creerGridContact(string _designation, string _telephone, string _mail)
         {
@@ -552,16 +574,16 @@ namespace TestApp.Pages
             switch(C.Name)
             {
                 case "GarconDroitier":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/lac bleu 2.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "GarconGaucher":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/2019-2020/Campagnes 2020/20200130_225525_964.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "FilleDroitiere":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/IMG_7868.JPG");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "FilleGauchere":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/2019-2020/Campagnes 2020/20200130_225525_964.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
             }
 

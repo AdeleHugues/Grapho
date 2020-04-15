@@ -7,9 +7,15 @@
       xmlns:local="clr-namespace:TestApp.Pages" xmlns:local1="clr-namespace:TestApp.UI_Elements"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PagePatient">
+      Title="PagePatient"
+      Name="Patient">
 
     <Page.Resources>
+        <BitmapImage x:Key="Plus" UriSource="/Images/plus.png" />
+        <BitmapImage x:Key="Transfert" UriSource="/Images/transfer.png" />
+        <BitmapImage x:Key="Ecole" UriSource="/Images/school.png" />
+
+
         <!-- ================= PLACEHOLDER ================= -->
         <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Template">
@@ -693,7 +699,7 @@
                                             </Style>
                                         </Button.Resources>
                                         <Grid>
-                                            <Image Source="C:\Users\adele\Downloads\plus.png" Height="13" Width="13"/>
+                                            <Image Source="{StaticResource ResourceKey=Plus}" Height="13" Width="13"/>
                                             <Popup Width="220" Height="170" x:Name="PopUpEnglobanteContact"  AllowsTransparency="True" PopupAnimation="Fade" IsOpen="False" StaysOpen="False" Closed="PopUpClosed">
                                                 <Grid>
                                                     <local1:PopUp x:Name="PopUpContact" />
@@ -723,7 +729,7 @@
                                                 <Setter Property="CornerRadius" Value="15"/>
                                             </Style>
                                         </Button.Resources>
-                                        <Image Source="C:\Users\adele\Downloads\plus.png" Height="13" Width="13"/>
+                                        <Image Source="{StaticResource ResourceKey=Plus}" Height="13" Width="13"/>
                                     </Button>
 
                                     <TextBlock FontFamily="Roboto Light" FontSize="10" FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center">Ajouter</TextBlock>
@@ -766,7 +772,7 @@
                                 <Setter Property="CornerRadius" Value="15"/>
                             </Style>
                         </Button.Resources>
-                        <Image Source="C:\Users\adele\Downloads\plus.png" Height="13" Width="13"/>
+                        <Image Source="{StaticResource ResourceKey=Plus}" Height="13" Width="13"/>
                     </Button>
 
                 </Grid>
@@ -797,7 +803,49 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
+                <Grid Grid.Column="0" Background="White" Margin="5, 10, 5, 5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.1*"/>
+                        
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
 
+                        <Image Grid.Column="0" Source="{StaticResource ResourceKey=Ecole}" />
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBox Name="TextBox3" Grid.Row="0" VerticalAlignment="Bottom" Margin="5, 5, 10, 5" FontFamily="Roboto Light" FontSize="15" Tag="Nom de l'établissement" Style="{StaticResource placeHolder}" TextChanged="textBox_TextChanged" />
+                            <TextBox Name="TextBox4" Grid.Row="1" VerticalAlignment="Top" Margin="5, 5, 10, 5" FontFamily="Roboto Light" FontSize="14" Tag="Nom de l'enseignant" Style="{StaticResource placeHolder}"/>
+                        </Grid>
+                    </Grid>
+                    <TextBox Name="TextBox5" Grid.Row="2" VerticalAlignment="Center" FontFamily="Roboto Light" FontSize="13" Style="{StaticResource placeHolder}" Tag="Téléphone" Margin="20,0,10,0"/>
+
+                    <TextBox Name="TextBox6" Grid.Row="4" VerticalAlignment="Center" FontFamily="Roboto Light" FontSize="13" Style="{StaticResource placeHolder}" Tag="Rue" Margin="20,0,10,0"/>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.4*"/>
+                            <ColumnDefinition Width="0.6*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="TextBox7" Grid.Column="1" VerticalAlignment="Center" FontFamily="Roboto Light" FontSize="13" Style="{StaticResource placeHolder}" Tag="Ville" Margin="5,0,10,0"/>
+                        <TextBox Name="TextBox8" Grid.Column="0" VerticalAlignment="Center" FontFamily="Roboto Light" FontSize="13" Style="{StaticResource placeHolder}" Tag="Code postal" Margin="20,0,5,0"/>
+                    </Grid>
+
+
+
+                </Grid>
+                
                 <Grid Grid.Column="1" Background="White" Margin="5, 10, 10, 5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.5*"/>
@@ -865,33 +913,72 @@
                     </ComboBox>
                 </Grid>
             </Grid>
+
+            <Grid Grid.Row="1" Background="#f7f7fb">
+                <TabControl Margin="5, 5, 10, 10" Name="Onglets">
+                    <TabItem Header="Arbre familial">
+                        <Grid x:Name="GridTabControl">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.7*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                                
+                           
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Name="Arbre">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                
+                                <StackPanel Orientation="Horizontal" x:Name="GrandsParents" Grid.Row="0" Background="#c5bbc9" AllowDrop="True" Drop="panel_Drop" HorizontalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" x:Name="Parents" Grid.Row="1" Background="#ddd7e0" AllowDrop="True" Drop="panel_Drop" HorizontalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" x:Name="Fraterie" Grid.Row="2" Background="#f0edf2" AllowDrop="True" Drop="panel_Drop" HorizontalAlignment="Center"/>
+                            </Grid>
+
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.6*"/>
+                                    <RowDefinition Height="0.4*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0" Visibility="Visible" Background="red">
+                                </StackPanel>
+
+                                <Grid Grid.Row="1" >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.1*"/>
+                                        <ColumnDefinition Width="0.45*"/>
+                                        <ColumnDefinition Width="0.45*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.1*"/>
+                                        <RowDefinition Height="0.45*"/>
+                                        <RowDefinition Height="0.45*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="G" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="D" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="G" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="F" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <local1:Circle Grid.Row="1" Grid.Column="2" x:Name="GarconDroitier" Loaded="SexeLateralite_Loaded" />
+                                    <local1:Circle Grid.Row="1" Grid.Column="1" x:Name="GarconGaucher" Loaded="SexeLateralite_Loaded"/>
+                                    <local1:Circle Grid.Row="2" Grid.Column="2" x:Name="FilleDroitiere" Loaded="SexeLateralite_Loaded"/>
+                                    <local1:Circle Grid.Row="2" Grid.Column="1" x:Name="FilleGauchere" Loaded="SexeLateralite_Loaded"/>
+                                </Grid>
+
+                            </Grid>
+
+                                
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Commentaires">
+
+                    </TabItem>
+
+                </TabControl>
+            </Grid>
             
-            <TabControl Grid.Row="1">
-                <TabItem Header="Arbre familial">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="0.28*" />
-                            <RowDefinition Height="0.28*" />
-                            <RowDefinition Height="0.28*" />
-                            <RowDefinition Height="0.16*" />
-                        </Grid.RowDefinitions>
-
-                        <WrapPanel x:Name="GrandsParents" Grid.Row="0" Background="Beige" AllowDrop="True" Drop="panel_Drop" />
-                        <WrapPanel x:Name="Parents" Grid.Row="1" Background="Beige" AllowDrop="True" Drop="panel_Drop" />
-                        <WrapPanel x:Name="Fraterie" Grid.Row="2" Background="Beige" AllowDrop="True" Drop="panel_Drop" />
-                        <WrapPanel Grid.Row="3" Background="Bisque" AllowDrop="True" Drop="panel_Drop"   HorizontalAlignment="Center" >
-                            <local1:Circle Margin="5" x:Name="GarconDroitier" Loaded="SexeLateralite_Loaded" />
-                            <local1:Circle Margin="5" x:Name="GarconGaucher" Loaded="SexeLateralite_Loaded"/>
-                            <local1:Circle Margin="5" x:Name="FilleDroitiere" Loaded="SexeLateralite_Loaded"/>
-                            <local1:Circle Margin="5" x:Name="FilleGauchere" Loaded="SexeLateralite_Loaded"/>
-                        </WrapPanel>
-                    </Grid>
-                </TabItem>
-                <TabItem Header="Commentaires">
-                    
-                </TabItem>
-
-            </TabControl>
         </Grid>
 
 

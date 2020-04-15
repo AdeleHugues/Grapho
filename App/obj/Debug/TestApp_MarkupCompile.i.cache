@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\adele\source\repos\Grapho2020\App\obj\Debug\
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\obj\Debug\
 TestApp
 none
 false
 DEBUG;TRACE
-C:\Users\adele\source\repos\Grapho2020\App\App.xaml
+C:\Users\leroy\Documents\Adèdèle\Grapho\App\App.xaml
 6170682437
 1785192969
-11-1756280334
-17256819277
+11-1935153414
+17-308158057
 MainWindow.xaml;Pages\PageAnamnese.xaml;Pages\PagePatient.xaml;Pages\PagePositionGrapho.xaml;UI Elements\Circle.xaml;UI Elements\PopUp.xaml;
 
-True
+False
 
