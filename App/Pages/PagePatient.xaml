@@ -943,8 +943,25 @@
                                     <RowDefinition Height="0.4*"/>
                                 </Grid.RowDefinitions>
 
-                                <StackPanel Grid.Row="0" Visibility="Visible" Background="red">
-                                </StackPanel>
+                                <Grid Name="FormulaireProche" Visibility="Hidden" Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBox Grid.Row="1" Tag="Prénom" Style="{StaticResource placeHolder}" FontFamily="Roboto Light" Margin="10,5"/>
+                                    <TextBox Grid.Row="2" Tag="Nom" Style="{StaticResource placeHolder}" FontFamily="Roboto Light" Margin="10,5"/>
+                                    <TextBox Grid.Row="3" Tag="Age" Style="{StaticResource placeHolder}" FontFamily="Roboto Light" Margin="10,5"/>
+                                    <StackPanel Grid.Row="4" x:Name="StackLaterlite" Orientation="Horizontal" Margin="10, 5, 10, 5" HorizontalAlignment="Center">
+                                        <RadioButton GroupName="Lateralite" x:Name="radioDroit" Content="Droitier" IsChecked="True" Margin="5,0,0,0" FontFamily="Roboto Light" FontSize="12"/>
+                                        <RadioButton GroupName="Lateralite" x:Name="radioGauche" Content="Gaucher" IsChecked="False" Margin="5,0,0,0" FontFamily="Roboto Light" FontSize="12"/>
+                                    </StackPanel>
+                                    <CheckBox Grid.Row="5" Content="Disponible" x:Name="Diponibilité" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
 
                                 <Grid Grid.Row="1" >
                                     <Grid.ColumnDefinitions>
@@ -962,9 +979,9 @@
                                     <TextBlock Grid.Row="1" Grid.Column="0" Text="G" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <TextBlock Grid.Row="2" Grid.Column="0" Text="F" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     <local1:Circle Grid.Row="1" Grid.Column="2" x:Name="GarconDroitier" Loaded="SexeLateralite_Loaded" />
-                                    <local1:Circle Grid.Row="1" Grid.Column="1" x:Name="GarconGaucher" Loaded="SexeLateralite_Loaded"/>
-                                    <local1:Circle Grid.Row="2" Grid.Column="2" x:Name="FilleDroitiere" Loaded="SexeLateralite_Loaded"/>
-                                    <local1:Circle Grid.Row="2" Grid.Column="1" x:Name="FilleGauchere" Loaded="SexeLateralite_Loaded"/>
+                                    <local1:Circle Grid.Row="1" Grid.Column="1" x:Name="GarconGaucher" Loaded="SexeLateralite_Loaded"  />
+                                    <local1:Circle Grid.Row="2" Grid.Column="2" x:Name="FilleDroitiere" Loaded="SexeLateralite_Loaded"  />
+                                    <local1:Circle Grid.Row="2" Grid.Column="1" x:Name="FilleGauchere" Loaded="SexeLateralite_Loaded" />
                                 </Grid>
 
                             </Grid>
@@ -973,7 +990,9 @@
                         </Grid>
                     </TabItem>
                     <TabItem Header="Commentaires">
-
+                        
+                        
+                        <RichTextBox Name="Commentaire" TextChanged="richTextBox_TextChanged"/>
                     </TabItem>
 
                 </TabControl>
