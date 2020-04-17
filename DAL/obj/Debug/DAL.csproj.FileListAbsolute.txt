@@ -12,3 +12,17 @@ C:\Users\adele\source\repos\Grapho2020\DAL\obj\Debug\DAL.csproj.CoreCompileInput
 C:\Users\adele\source\repos\Grapho2020\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\adele\source\repos\Grapho2020\DAL\obj\Debug\DAL.dll
 C:\Users\adele\source\repos\Grapho2020\DAL\obj\Debug\DAL.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\DAL.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\DAL.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\Dapper.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\Domain.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\Domain.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\Dapper.xml
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\obj\Debug\DAL.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\DAL\obj\Debug\DAL.pdb

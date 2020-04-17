@@ -21,6 +21,31 @@ namespace TestApp.UI_Elements
     public partial class Circle : UserControl
     {
         private Brush _previousFill = null;
+        public static readonly DependencyProperty NomProperty = DependencyProperty.Register
+        (
+             "NomProche",
+             typeof(string),
+             typeof(Circle)
+        );
+
+        public string NomProche
+        {
+            get { return (string)GetValue(NomProperty); }
+            set { SetValue(NomProperty, value); }
+        }
+
+        public static readonly DependencyProperty AgeProperty = DependencyProperty.Register
+        (
+             "AgeProche",
+             typeof(int),
+             typeof(Circle)
+        );
+
+        public int AgeProche
+        {
+            get { return (int)GetValue(AgeProperty); }
+            set { SetValue(AgeProperty, value); }
+        }
 
         public Circle()
         {

@@ -13,6 +13,7 @@ namespace Domain.Classes_métier
         public string PatientPrenom { get; set; }
         public bool PatientSexe { get; set; } //si vrai, garçon
         public DateTime PatientNaissance { get; set; }
+        public DateTime PatientDateBilan { get; set; }
         public string Commentaire { get; set; }
         public string PatientPhoto { get; set; }
         public string PatientPhotoEcriture { get; set; }

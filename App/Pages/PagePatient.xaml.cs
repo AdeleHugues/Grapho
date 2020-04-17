@@ -25,10 +25,13 @@ namespace TestApp.Pages
     {
         protected Patient patient;
         protected bool modification;
-        public string[] placeholders = new string[] { "Nom", "Prénom" };
+        public string[] placeholders = new string[] { "Nom", "Prénom", "Nom de l'établissement", "Nom de l'enseignant", "Téléphone", "Rue", "Code Postal", "Ville" };
+        Proche currentProche;
+
         public PagePatient(Patient _patient)
         {
             InitializeComponent();
+
             if (_patient != null)
             {
                 patient = _patient;
@@ -45,6 +48,14 @@ namespace TestApp.Pages
             }
             PopUpContact.IdPatientActuel = patient.PatientId;
             InitialisationComposants();
+
+            Patient.Measure(new System.Windows.Size(double.PositiveInfinity, double.PositiveInfinity));
+            Patient.Arrange(new Rect(0, 0, Patient.DesiredSize.Width, Patient.DesiredSize.Height));
+            Fraterie.Width = GridTabControl.ColumnDefinitions[0].ActualWidth;
+            Parents.Width = Arbre.ActualWidth;
+            GrandsParents.Width = Arbre.ActualWidth;
+
+            currentProche = new Proche("", "", 0, true, "", false, true, false);
         }
 
 
@@ -52,13 +63,21 @@ namespace TestApp.Pages
         public void InitialisationComposants()
         {
             Id.Content = patient.PatientId.ToString();
-            DatePickerJour.SelectedDate = DateTime.Now;
 
             if (modification == true)
             {
                 TextBox1.Text = patient.PatientNom;
                 TextBox2.Text = patient.PatientPrenom;
+
+                FlowDocument myFlowDoc = new FlowDocument();
+                Run myRun = new Run(patient.Commentaire);
+                Paragraph myParagraph = new Paragraph();
+                myParagraph.Inlines.Add(myRun);
+                myFlowDoc.Blocks.Add(myParagraph);
+                Commentaire.Document = myFlowDoc;
+
                 DatePickerNaissance.SelectedDate = patient.PatientNaissance;
+                DatePickerJour.SelectedDate = patient.PatientDateBilan;
                 TextBlockAffichageAge.Content = (DateTime.Now.Year - patient.PatientNaissance.Year).ToString() + " ans " + (DateTime.Now.Month - patient.PatientNaissance.Month).ToString() + " mois ";
 
                 var contacts = ContactRepository.getContactsPatient(patient.PatientId);
@@ -93,6 +112,10 @@ namespace TestApp.Pages
                         creerGridSuivis(specialiste, suivi.Debut, suivi.Fin);
                     }
                 }
+            }
+            else
+            {
+                DatePickerJour.SelectedDate = DateTime.Now;
 
             }
         }
@@ -102,12 +125,35 @@ namespace TestApp.Pages
             int index = int.Parse(textBox.Name.Substring(7, 1));
             if (textBox.Text != placeholders[index - 1])
             {
-                if (index == 1)
-                    PatientRepository.updateNomPatient(patient.PatientId, textBox.Text);
-                else
-                    PatientRepository.updatePrenomPatient(patient.PatientId, textBox.Text);
+                switch(index)
+                {
+                    case 1:
+                        PatientRepository.updateNomPatient(patient.PatientId, textBox.Text);
+                        break;
+
+                    case 2:
+                        PatientRepository.updatePrenomPatient(patient.PatientId, textBox.Text);
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                    case 5:
+                        break;
+                }
             }
         }
+        private void richTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            RichTextBox richTextBox = sender as RichTextBox;
+
+            string value = StringFromRichTextBox(richTextBox);
+            PatientRepository.updateCommentairePatient(patient.PatientId, value);
+        }
+
         private void creerGridContact(string _designation, string _telephone, string _mail)
         {
             //On transforme la dernière ligne en plus petite
@@ -280,6 +326,8 @@ namespace TestApp.Pages
             DatePicker datePicker = (DatePicker)sender;
             if (datePicker.Name == "DatePickerNaissance")
                 PatientRepository.updateNaissancePatient(patient.PatientId, (DateTime)datePicker.SelectedDate);
+            else
+                PatientRepository.updateDateBilanPatient(patient.PatientId, (DateTime)datePicker.SelectedDate);
             
             if (DatePickerJour.SelectedDate != null && DatePickerNaissance.SelectedDate != null)
                 TextBlockAffichageAge.Content = calculerAge((DateTime)DatePickerNaissance.SelectedDate, (DateTime)DatePickerJour.SelectedDate);
@@ -313,6 +361,19 @@ namespace TestApp.Pages
             var contacts = ContactRepository.getContactsPatient(patient.PatientId);
             foreach (Contact contact in contacts)
                 creerGridContact(contact.ContactDesignation, contact.ContactTelephone, contact.ContactMail);
+        }
+        string StringFromRichTextBox(RichTextBox rtb)
+        {
+            TextRange textRange = new TextRange(
+                // TextPointer to the start of content in the RichTextBox.
+                rtb.Document.ContentStart,
+                // TextPointer to the end of content in the RichTextBox.
+                rtb.Document.ContentEnd
+            );
+
+            // The Text property on a TextRange object returns a string
+            // representing the plain text content of the TextRange.
+            return textRange.Text;
         }
 
         //================= SUIVI =================
@@ -540,7 +601,7 @@ namespace TestApp.Pages
                     }
                 }
             }
-
+            FormulaireProche.Visibility = Visibility.Visible;
 
         }
         private void SexeLateralite_Loaded(object sender, RoutedEventArgs e)
@@ -552,16 +613,16 @@ namespace TestApp.Pages
             switch(C.Name)
             {
                 case "GarconDroitier":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/lac bleu 2.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "GarconGaucher":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/2019-2020/Campagnes 2020/20200130_225525_964.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "FilleDroitiere":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/IMG_7868.JPG");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
                 case "FilleGauchere":
-                    btpImg.UriSource = new Uri(@"C:/Users/adele/Pictures/2019-2020/Campagnes 2020/20200130_225525_964.jpg");
+                    btpImg.UriSource = new Uri("../../Images/transfer.png", UriKind.Relative);
                     break;
             }
 

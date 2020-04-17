@@ -122,6 +122,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Images\school.png" />
+    <Resource Include="Images\transfer.png" />
+    <Resource Include="Images\plus.png" />
     <Resource Include="Images\business-and-finance.png" />
     <Resource Include="Images\clock.png" />
     <Resource Include="Images\hand.png" />

@@ -111,6 +111,13 @@ namespace DAL.Repositories
                 connection.Execute("UPDATE PATIENT SET PatientNaissance=@date WHERE PatientId=@idPatient", new { date, idPatient });
             }
         }
+        public static void updateDateBilanPatient(int idPatient, DateTime date)
+        {
+            using (IDbConnection connection = new SQLiteConnection(DBAccess.connectionString()))
+            {
+                connection.Execute("UPDATE PATIENT SET PatientDateBilan=@date WHERE PatientId=@idPatient", new { date, idPatient });
+            }
+        }
         public static void updateCommentairePatient(int idPatient, string commentaire)
         {
             using (IDbConnection connection = new SQLiteConnection(DBAccess.connectionString()))

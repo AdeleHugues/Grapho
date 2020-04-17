@@ -7,3 +7,12 @@ C:\Users\adele\source\repos\Grapho2020\LaTeXExporter\obj\Debug\LaTeXExporter.pdb
 C:\Users\adele\source\repos\Grapho2020\LaTeXExporter\bin\Debug\Domain.dll
 C:\Users\adele\source\repos\Grapho2020\LaTeXExporter\bin\Debug\Domain.pdb
 C:\Users\adele\source\repos\Grapho2020\LaTeXExporter\obj\Debug\LaTeXExporter.csproj.CopyComplete
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\bin\Debug\LaTeXExporter.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\bin\Debug\LaTeXExporter.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\bin\Debug\Domain.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\bin\Debug\Domain.pdb
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\obj\Debug\LaTeXExporter.csprojAssemblyReference.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\obj\Debug\LaTeXExporter.csproj.CoreCompileInputs.cache
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\obj\Debug\LaTeXExporter.csproj.CopyComplete
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\obj\Debug\LaTeXExporter.dll
+C:\Users\leroy\Documents\Adèdèle\Grapho\LaTeXExporter\obj\Debug\LaTeXExporter.pdb
